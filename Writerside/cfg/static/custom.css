@@ -1,0 +1,10 @@
+/* set the main background for the light theme to pink */
+:root {
+    --rs-color-primary-light-theme : rgb(232, 72, 139, 1)
+}
+
+/* make the border for images transparent with a 30px radius */
+.article__img {
+    border-radius: 5px !important;
+    border: none;
+}

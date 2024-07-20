@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="in"
+                 name="Phote Wiki"
+                 start-page="starter.md">
+
+    <toc-element topic="starter.md"/>
+    <toc-element topic="그라운드-룰.md"/>
+    <toc-element topic="커밋-컨벤션.md"/>
+    <toc-element topic="Backend.md">
+        <toc-element topic="코드-컨벤션.md"/>
+        <toc-element topic="How-to.md"/>
+        <toc-element topic="브랜치-전략.md"/>
+    </toc-element>
+    <toc-element topic="코드-리뷰.md"/>
+</instance-profile>
