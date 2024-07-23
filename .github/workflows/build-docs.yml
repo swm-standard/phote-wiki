@@ -13,6 +13,7 @@ env:
   INSTANCE: 'Writerside/in'
   ARTIFACT: 'webHelpIN2-all.zip'
   DOCKER_VERSION: '241.18775'
+  ALGOLIA_KEY: '${{ secrets.ALGOLIA_KEY }}'
 
 jobs:
   build:
