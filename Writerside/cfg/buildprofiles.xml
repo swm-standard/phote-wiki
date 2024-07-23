@@ -8,6 +8,9 @@
             <noindex-content>true</noindex-content>
             <primary-color>strawberry</primary-color>
             <custom-css>custom.css</custom-css>
+            <algolia-id>SN4YR0P4XX</algolia-id>
+            <algolia-index>phote-wiki-index</algolia-index>
+            <algolia-api-key>197c04ad860d92349bae70ab36cf4008</algolia-api-key>
         </variables>
     </build-profile>
 
