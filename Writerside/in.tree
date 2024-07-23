@@ -10,6 +10,7 @@
     <toc-element topic="그라운드-룰.md"/>
     <toc-element topic="커밋-컨벤션.md"/>
     <toc-element topic="Backend.md">
+        <toc-element topic="S3-수명주기-설정.md"/>
         <toc-element topic="코드-컨벤션.md"/>
         <toc-element topic="How-to.md"/>
         <toc-element topic="브랜치-전략.md"/>
