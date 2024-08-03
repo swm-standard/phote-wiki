@@ -16,5 +16,6 @@
         <toc-element topic="코드-컨벤션.md"/>
         <toc-element topic="How-to.md"/>
         <toc-element topic="브랜치-전략.md"/>
+        <toc-element topic="AWS-Lambda와-API-Gateway로-서버리스-환경-구성하기.md"/>
     </toc-element>
 </instance-profile>
