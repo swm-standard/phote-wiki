@@ -95,14 +95,14 @@ spring.data.redis.password=${{password}}
 ### refreshToken 관련 sequence diagram
 
 
-<code-block lang="plantuml">
+```plantuml
     @startuml
     Actor Client
     Participant Server
     Database MySql
     Database Redis
     
-    == 로그인/회원가입 시 ==
+    ==로그인/회원가입 시==
     activate Client
     Client -> Server: 로그인/회원가입 요청
     activate Server
@@ -139,7 +139,7 @@ spring.data.redis.password=${{password}}
     deactivate Redis
     
     @enduml
-</code-block>
+```
 
 
 ----
