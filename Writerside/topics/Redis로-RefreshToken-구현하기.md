@@ -71,7 +71,8 @@ spring.data.redis.password=${{password}}
 
 
 > 🥸 의문인 점
-**  처음  설계할 때는 springboot 실행도 docker-compose에 함께 작성하였어서 host name을 r`edis `로 설정했습니다. 이렇게 실행하면 정상작동돼야할텐데 안됐습니다.. 이유는 ... 모르므로 나중에 찾아보겠습니다.
+> 
+> 처음  설계할 때는 springboot 실행도 docker-compose에 함께 작성하였어서 host name을 `redis`로 설정했습니다. 이렇게 실행하면 정상작동돼야할텐데 안됐습니다.. 이유는 ... 모르므로 나중에 찾아보겠습니다.
 
 - ec2 로 배포를 할 때도 기존 docker-compose 파일에 redis 설정을 그대로 복붙하면 될 것 같습니다. (프로퍼티 파일에서 `spring.data.redis.host`  값을 달라질 것)
 
@@ -87,9 +88,11 @@ spring.data.redis.password=${{password}}
 
 → 서비스 이용자 입장에서는 달라질게 없습니다! 단지 클라이언트 측에서 에러를 반환받을 경우 accessToken 갱신 api 를 내부적으로 요청하기만 하면 됩니다
 
-> ⚠️ 단점
+> **⚠ 단점**
+> 
 > 실제로 잘못된 사용자가 요청해서 403 에러가 반환됐는지, accessToken이 만료됐기 때문인지 구분할 수가 없습니다.
 > (근데 이 둘을 구분할 수 있는 구현 방법이 있는지도 잘 모르겠습니다...! ㅎㅎ)
+
 
 
 ### refreshToken 관련 sequence diagram
@@ -212,3 +215,18 @@ fun createToken(userInfoResponseDto: UserInfoResponse, memberId: UUID): String {
 ```
 
 ----
+
+### RefreshToken을 UUID로 지정한 이유
+
+#### accessToken 과 같이 JWT 형태라면
+1. Refresh Token의 유효성을 검증하기 위해 데이터베이스에 별도로 액세스하지 않아도 되므로 서버의 부하가 상대적으로 적어집니다.
+2. stateless 의 장점을 살릴 수 있습니다. (서버가 상태를 유지하고 있을 필요가 없음)
+3. 2번 장점과의 트레이드 오프로 탈취당하게 되면 서버에서는 이를 분간할 수 있는 방법이 없기 때문에 위험합니다.
+
+#### UUID 형태라면
+1. DB에 접근하여 refreshToken 이 유효한지 검증해야하므로 부하가 있을 수 있습니다.
+2. JWT에 비해 보안성이 높습니다.
+
+accessToken은 jwt로 사용하되 탈취 위험을 줄이기 위해 유효 시간을 짧게 유지하고 
+refreshToken을 유효기간은 훨씬 길게 하나, 보안적으로 안전하도록 UUID로 지정했습니다.
+DB 부하 문제는 메모리 기반인 Redis 를 사용하여 접근 속도를 높일 수 있도록 했습니다.
