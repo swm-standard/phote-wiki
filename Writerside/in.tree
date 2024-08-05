@@ -11,11 +11,12 @@
     <toc-element topic="커밋-컨벤션.md"/>
     <toc-element topic="코드-리뷰.md"/>
     <toc-element topic="Backend.md">
-        <toc-element topic="GitAction으로-테스트-자동화.md"/>
-        <toc-element topic="S3-수명주기-설정.md"/>
         <toc-element topic="코드-컨벤션.md"/>
         <toc-element topic="How-to.md"/>
         <toc-element topic="브랜치-전략.md"/>
+        <toc-element topic="S3-수명주기-설정.md"/>
+        <toc-element topic="GitAction으로-테스트-자동화.md"/>
         <toc-element topic="AWS-Lambda와-API-Gateway로-서버리스-환경-구성하기.md"/>
+        <toc-element topic="Redis로-RefreshToken-구현하기.md"/>
     </toc-element>
 </instance-profile>
