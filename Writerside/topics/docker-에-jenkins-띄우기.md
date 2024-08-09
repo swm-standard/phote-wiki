@@ -38,6 +38,7 @@ sudo ufw allow  9090
 ![image](https://res.craft.do/user/full/ef03b946-2e9d-718e-9911-bdafdd78ffa6/doc/CACC90F5-7529-4D90-8246-5B3C88436CB1/5DA425C2-F348-4F5A-B8BB-407D9C3DE491_2/BI68mfTHhnPygaBw8tlgS05PBOa1wiqrnmq8WR8yfygz/%202024-07-28%20%209.28.43.png)
 
 `ec2 api 주소 : 9090`  으로 접속하면 (처음 접속할 경우) 위와 같은 페이지가 뜹니다.
+
 ----
 
 ### ⚠️ 디스크 공간이 부족하다는 알림이 뜬다면
