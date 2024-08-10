@@ -142,9 +142,9 @@ savingAnswer.isCorrect = async { gradeByChatGpt(savingAnswer) }.await()
 ```
 
 
-비동기로 처리될 부분은 `async{}` 로 실행합니다. `async` 는 새로운 코루틴을 시작하는 코루틴 빌더로 비동기 연산을  시작한다는 의미를 담고 있습니다. 이 함수는 실행 후에 `Deferred` 인스턴스를 반환하는데 이는 비동기 연산이 완료 된 후 나중에 결과를 주겠다는 약속을 의미합니다. 이를 기다린 후 완성된 결과를 받기 위해서 .await()로 반환받습니다.
+비동기로 처리될 부분은 `async{}` 로 실행합니다. 
+`async` 는 새로운 코루틴을 시작하는 코루틴 빌더로 비동기 연산을  시작한다는 의미를 담고 있습니다. 이 함수는 실행 후에 `Deferred` 인스턴스를 반환하는데 이는 비동기 연산이 완료 된 후 나중에 결과를 주겠다는 약속을 의미합니다. 이를 기다린 후 완성된 결과를 받기 위해서 `.await()` 로 반환받습니다. 저는  `async { gradeByChatGpt(savingAnswer) }`  에서 `Deferred<Answer>` 이 반환되면, `.await()` 로 언팩하여 Answer 엔티티를 받는 느낌으로 받아들였습니다.
 
-저는  `async { gradeByChatGpt(savingAnswer) }`  에서 Deferred<Answer> 이 반환되면, `.await()` 로 언팩하여 Answer 엔티티를 받는 느낌으로 받아들였습니다.
 
 ## suspend fun 을 이용하여 비동기 처리 완성하기
 
