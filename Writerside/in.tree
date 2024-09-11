@@ -20,5 +20,6 @@
         <toc-element topic="AWS-Lambda와-API-Gateway로-서버리스-환경-구성하기.md"/>
         <toc-element topic="Redis로-RefreshToken-구현하기.md"/>
         <toc-element topic="Coroutine-으로-비동기-처리하기.md"/>
+        <toc-element topic="jacoco-로-테스트-커버리지-측정하기.md"/>
     </toc-element>
 </instance-profile>
